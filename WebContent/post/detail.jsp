@@ -3,11 +3,13 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>게시글 목록 페이지</title>
-	<link rel="stylesheet" href="/apple/Static/css/style.css" />
+	<title>게시글 상세 페이지</title>
+	<link rel="stylesheet" href="/apple/static/css/style.css" />
 </head>
 <body>
-	<h1>게시글 목록 페이지</h1>
+<header>
+	<h1>게시글 상세 페이지</h1>
+</header>
 <hr/>
 <nav>
 	<a href="/apple/member?cmd=loginForm">로그인</a>
@@ -17,17 +19,22 @@
 	<table border="1">
 		<tr>
 			<th>번호</th>
+			<th>작성자</th>
 			<th>제목</th>
-			<th>작성일</th>
+			<th>내용</th>
+			<th>수정</th>
+			<th>삭제</th>
 		</tr>
 		
 		<tr>
 			<td>1</td>
-			<td><a href="/apple/post?cmd=detail&id=1">첫번째글입니다.</a></td>
-			<td>2020-06-18</td>
+			<td>ssar</td>
+			<td>첫번째글입니다.</td>
+			<td>내용입니다.</td>
+			<td><a href="/apple/post?cmd=updateForm&id=1">수정</a></td>
+			<td><a href="/apple/post?cmd=deleteProc&id=1">삭제</a></td>
 		</tr>
 	</table>
-	<a href="/apple/post?com=saveForm">글쓰기</a>
 </section>
 <footer>
 	<p>Created By Apple.</p>

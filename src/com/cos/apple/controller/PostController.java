@@ -39,7 +39,7 @@ public class PostController extends HttpServlet {
 		Action action = router(cmd);
 		action.execute(request, response);
 	}
-	
+
 	private Action router(String cmd) {
 		// http://localhost:8000/apple/post?cmd=list
 		if(cmd.equals("list")) {
@@ -47,6 +47,6 @@ public class PostController extends HttpServlet {
 		}
 		return null;
 	}
-	
+
 }
 

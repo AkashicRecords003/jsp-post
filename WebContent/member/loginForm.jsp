@@ -3,31 +3,32 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>게시글 목록 페이지</title>
+	<title>로그인 페이지</title>
 	<link rel="stylesheet" href="/apple/Static/css/style.css" />
 </head>
 <body>
-	<h1>게시글 목록 페이지</h1>
+<header>
+	<h1>로그인 페이지</h1>
+</header>
 <hr/>
 <nav>
 	<a href="/apple/member?cmd=loginForm">로그인</a>
 	<a href="/apple/member?cmd=joinForm">회원가입</a>
 </nav>
 <section>
+	<form action="/apple/post?cmd=saveProc" method="post">
 	<table border="1">
 		<tr>
-			<th>번호</th>
-			<th>제목</th>
-			<th>작성일</th>
+			<th>유저네임</th>
+			<td><input type="text" name="username" /></td>
 		</tr>
-		
 		<tr>
-			<td>1</td>
-			<td><a href="/apple/post?cmd=detail&id=1">첫번째글입니다.</a></td>
-			<td>2020-06-18</td>
+			<th>패스워드</th>
+			<td><input type="password" name="password" /></td>
 		</tr>
 	</table>
-	<a href="/apple/post?com=saveForm">글쓰기</a>
+	<button>로그인</button>
+	</form>
 </section>
 <footer>
 	<p>Created By Apple.</p>
