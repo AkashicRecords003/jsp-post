@@ -13,7 +13,7 @@ public class PostListAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException{
 		RequestDispatcher dis = 
-				request.getRequestDispatcher("index.jsp");
+				request.getRequestDispatcher("post/list.jsp");
 		dis.forward(request, response);
 		
 	}
