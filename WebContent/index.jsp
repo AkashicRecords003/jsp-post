@@ -3,9 +3,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시글 목록 페이지</title>
 </head>
 <body>
-
+<h1>게시글 목록 페이지</h1>
+<hr/>
 </body>
 </html>
+
