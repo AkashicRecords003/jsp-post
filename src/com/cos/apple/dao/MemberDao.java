@@ -1,18 +1,18 @@
 package com.cos.apple.dao;
-	
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import com.cos.apple.db.DBConn;
 import com.cos.apple.model.Member;
-	
+
 	public class MemberDao {
-		
+
 		private Connection conn;
 		private PreparedStatement pstmt;
 		private ResultSet rs;
-		
+
 		public Member 회원찾기(int id) {
 			try {
 				String sql = "SELECT * FROM member WHERE id = ?";
@@ -33,7 +33,7 @@ import com.cos.apple.model.Member;
 			}
 			return null;
 		}
-		
+
 		public int 회원수정(int id, String username, String password, String email) {
 			try {
 				String sql = "UPDATE member SET username=?, password=?, email=? WHERE id=?";
@@ -49,7 +49,7 @@ import com.cos.apple.model.Member;
 			}
 			return -1;
 		}
-		
+
 		public Member 로그인(String username, String password) {
 			try {
 				String sql = "SELECT * FROM member WHERE username = ? AND password = ?";
@@ -71,7 +71,7 @@ import com.cos.apple.model.Member;
 			}
 			return null;
 		}
-		
+
 		public int 회원가입(String username, String password, String email) {
 			try {
 				String sql = "INSERT INTO member(id, username, password, email, createDate) VALUES(member_seq.nextval, ?,?,?, sysdate)";
@@ -86,6 +86,6 @@ import com.cos.apple.model.Member;
 			}
 			return -1;
 		}
-		
+
 	}
 
