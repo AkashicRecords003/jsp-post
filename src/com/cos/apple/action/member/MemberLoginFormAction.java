@@ -12,6 +12,7 @@ public class MemberLoginFormAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.sendRedirect("member/loginForm.jsp");
+		
 	}
 }
 

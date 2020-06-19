@@ -3,7 +3,7 @@
 
 <nav>
 	<c:choose>
-		<c:when test="${empty sessionScopt.principal}">
+		<c:when test="${empty sessionScope.principal}">
 			<a href="/apple/member?cmd=loginForm">로그인</a>
 			<a href="/apple/member?cmd=joinForm">회원가입</a>	
 		</c:when>
