@@ -15,7 +15,7 @@ public class PostSaveProcAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		HttpSession session = request.getSession();
 		if(session.getAttribute("principal") == null) {
-			response.sendRedirect("post/savePorc.jsp");
+			response.sendRedirect("member/loginForm.jsp");
 			return;
 		}
 		

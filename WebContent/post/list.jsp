@@ -11,7 +11,9 @@
 	<h1>게시글 목록 페이지</h1>
 </header>
 <hr/>
+
 <%@include file="../include/nav.jsp" %>
+
 <section>
 	<table border="1">
 		<tr>
@@ -19,14 +21,17 @@
 			<th>제목</th>
 			<th>작성일</th>
 		</tr>
-
+		
+		<c:forEach var="post" items="${posts}">
 		<tr>
-			<td>1</td>
-			<td><a href="/apple/post?cmd=detail&id=1">첫번째글입니다.</a></td>
-			<td>2020-06-18</td>
+			<td>${post.id}</td>
+			<td><a href="/apple/post?cmd=detail&id=${post.id}">${post.title}</a></td>
+			<td>${post.createDate}</td>
 		</tr>
+		</c:forEach>
+		
 	</table>
-	<a href="/apple/post?com=saveForm">글쓰기</a>
+	<a href="/apple/post?cmd=saveForm">글쓰기</a>
 </section>
 <footer>
 	<p>Created By Apple.</p>
