@@ -19,7 +19,7 @@
 			<th>제목</th>
 			<th>작성일</th>
 		</tr>
-		
+
 		<tr>
 			<td>1</td>
 			<td><a href="/apple/post?cmd=detail&id=1">첫번째글입니다.</a></td>

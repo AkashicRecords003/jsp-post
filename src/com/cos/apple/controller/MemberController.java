@@ -13,16 +13,17 @@ import com.cos.apple.action.member.MemberJoinFormAction;
 import com.cos.apple.action.member.MemberJoinProcAction;
 import com.cos.apple.action.member.MemberLoginFormAction;
 import com.cos.apple.action.member.MemberLoginProcAction;
-import com.cos.apple.action.post.PostListAction;
+import com.cos.apple.action.member.MemberLogoutAction;
+import com.cos.apple.action.member.MemberUpdateFormAction;
+import com.cos.apple.action.member.MemberUpdateProcAction;
 
 // http://localhost:8000/apple/member
 @WebServlet("/member")
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     public MemberController() {
         super();
-
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,20 +33,19 @@ public class MemberController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doProcess(request, response);
 	}
-
+	
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 1. request utf-8 세팅 = web.xml 필터 등록함.
 		// 2. response utf-8 세팅
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
-		//key=value
+		
 		String cmd = request.getParameter("cmd");
 		Action action = router(cmd);
 		action.execute(request, response);
 	}
-
+	
 	private Action router(String cmd) {
-		// http://localhost:8000/apple/post?cmd=list
 		if(cmd.equals("joinForm")) {
 			return new MemberJoinFormAction();
 		}else if(cmd.equals("joinProc")) {
@@ -55,7 +55,11 @@ public class MemberController extends HttpServlet {
 		}else if(cmd.equals("loginProc")) {
 			return new MemberLoginProcAction();
 		}else if(cmd.equals("updateForm")) {
-	
+			return new MemberUpdateFormAction();
+		}else if(cmd.equals("updateProc")) {
+			return new MemberUpdateProcAction();
+		}else if(cmd.equals("logout")) {
+			return new MemberLogoutAction();
 		}
 		return null;
 	}
