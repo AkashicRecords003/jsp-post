@@ -2,7 +2,6 @@ package com.cos.apple.action.post;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +17,7 @@ public class PostSaveFormAction implements Action {
 			response.sendRedirect("member/loginForm.jsp");
 			return;
 		}
-		
+
 		response.sendRedirect("post/saveForm.jsp");
 
 	}
